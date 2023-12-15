@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Create a zip file."""
 import tarfile
+from fabric.api import local
 import os
 from datetime import datetime
 import glob
@@ -14,8 +15,6 @@ def do_pack():
     if os.path.isdir("versions") is False:
         if local("mkdir -p versions").failed is True:
             return None
-    with tarfile.open(file_name, 'w:gz') as new:
-        files = glob.glob(os.path.join('web_static', '*'))
-        for file_n in files:
-            new.add(file_n, arcname=os.path.basename(file_n))
+    if local("tar -cvzf {} web_static".format(file)).failed is True:
+        return None
     return filename
