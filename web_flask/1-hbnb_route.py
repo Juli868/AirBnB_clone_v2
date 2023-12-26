@@ -1,4 +1,4 @@
-#!/us/bin/python3
+#!/usr/bin/python3
 """Routing definition."""
 from flask import Flask
 
