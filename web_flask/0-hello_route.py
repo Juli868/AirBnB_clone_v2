@@ -10,7 +10,7 @@ app.url_map.strict_slashes = False
 @app.route("/")
 def index():
     """Definition of the job."""
-    return ("Hello world!")
+    return ("Hello HBNB!")
 
 
 if __name__ == "__main__":
