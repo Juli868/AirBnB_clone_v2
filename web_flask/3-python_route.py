@@ -23,7 +23,7 @@ def c_text(text):
     return f"C {text.replace('_',' ')}"
 
 
-@app.route("/python")
+@app.route("/python/")
 @app.route("/python/<text>")
 def python_text(text='is cool'):
     """Define Python route."""
