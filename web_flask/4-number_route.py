@@ -31,19 +31,10 @@ def python_text(text='is cool'):
     return f"Python {text.replace('_', ' ')}"
 
 
-@app.route("/number/<n>")
+@app.route("/number/<int:n>")
 def number(n):
     """Display only a number."""
-    try:
-        number = int(n)
-        return f"{number} is a number"
-    except Exception as e:
-        return '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n\
-<title>404 Not Found</title>\n\
-<h1>Not Found</h1>\n\
-<p>The requested URL was not found on the server.  \
-If you entered the URL manually please check your \
-spelling and try again.</p>'
+    return f"{number} is a number"
 
 
 if __name__ == '__main__':
