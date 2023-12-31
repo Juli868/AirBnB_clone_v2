@@ -34,7 +34,7 @@ def python_text(text='is cool'):
 @app.route("/number/<int:n>")
 def number(n):
     """Display only a number."""
-    return f"{number} is a number"
+    return f"{n} is a number"
 
 
 if __name__ == '__main__':
